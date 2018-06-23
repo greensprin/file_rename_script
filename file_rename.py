@@ -6,20 +6,20 @@ import sys
 argvs = sys.argv
 
 def search_path(path, fname, frename):
-   flists = os.listdir(path)
-   # ファイルかディレクトリを判断
-   for flist in flists:
-       print(flist)
-       filename, ext = os.path.splitext(flist)
-       if ext == ".txt" :
-           print("this is file")
-           file_rename(path, flist, fname, frename)
-       else:
-           print("this is dir")
-           cul_dir = path
-           path = path + "\\" + flist
-           search_path(path, fname, frename)
-           path = cul_dir
+    flists = os.listdir(path)
+    # ファイルかディレクトリを判断
+    for flist in flists:
+        print(flist)
+        filename, ext = os.path.splitext(flist)
+        if ext == ".txt" :
+            print("this is file")
+            file_rename(path, flist, fname, frename)
+        else:
+            print("this is dir")
+            cul_dir = path
+            path = path + "\\" + flist
+            search_path(path, fname, frename)
+            path = cul_dir
 
 
 def file_rename(path, flist, fname, frename):
