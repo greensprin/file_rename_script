@@ -5,6 +5,7 @@ import sys
 
 argvs = sys.argv
 
+# パターンの最初に書く部分で、パターンごとにメンテナンスが必要
 head_ss = [ \
         "ruby aaa.rb ^\n", \
         "param\param.txt ^\n" \
