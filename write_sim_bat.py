@@ -20,8 +20,8 @@ def add_strlist(path):
     ss = []
     flists = os.listdir(path)
     for flist in flists:
-        if (flist.find("a") != -1 and flist.find(".txt") != -1):
-            ss.append(flist)
+        if (flist.find("a") != -1 and flist.find("_crop.txt") != -1):
+            ss.append(path + "\\" + flist)
 
     return ss
 
