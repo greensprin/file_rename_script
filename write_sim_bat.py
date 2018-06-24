@@ -27,14 +27,16 @@ def add_strlist(path):
 
 # ファイルにリスト内の文字列を書き込む
 def write_str(wf, ss):
+    last_ss = ss[-1]
     for s in ss:
         wf.write(s)
-        wf.write(" ^\n")
+        if (s != last_ss): wf.write(" ^\n")
+        else: wf.write(" \n\n")
 
 if __name__ == '__main__':
-    path = argvs[1]
-    wf_name = argvs[2]
-    with open(wf_name, "w") as wf:
+    wf_name = argvs[1]
+    path = argvs[2]
+    with open(wf_name, "a") as wf:
         ss = add_strlist(path)
         head_sim_s(wf)
         write_str(wf, ss)
